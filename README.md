@@ -1,8 +1,8 @@
 # App Lembrete
-Este projeto(ainda em construção) apresenta um aplicativo de notas/lembretes para Android e IOS, utilizando banco de dados nativo.
+Este projeto(ainda em construção) apresenta um aplicativo de notas/lembretes para Android e IOS, utilizando banco de dados local.
 ## Tecnologias
 Para o desenvolvimento desse projeto, foi usando, C#.NET, o Xamarin para o desenvolvimento multiplataforma e o SQlite para 
-parte de banco de dados nativa. Para saber mais de cada tecnologia: </br>
+parte de banco de dados local. Para saber mais de cada tecnologia: </br>
 - [C#](https://github.com/csharpbrasil)
 - [Xamarin](https://github.com/xamarin)
 - [SQlite](https://github.com/sqlite/sqlite#sqlite-source-repository)
