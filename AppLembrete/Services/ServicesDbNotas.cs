@@ -35,7 +35,6 @@ namespace AppLembrete.Services
                     {
                         StatusMessage = String.Format("0 registro(s) adicionado(s)");
                     }
-
                 }
                 else
                 {

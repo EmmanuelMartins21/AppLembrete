@@ -3,12 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLembrete.Views.PageSobre" Title="Pagina Sobre o Desenvolvedor">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Pagina Sobre"
-                FontSize="Large" 
-                FontAttributes="Bold"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="0,35,10,0" >
+            <Label Text="Sobre mim"
+                   HorizontalOptions="Center"
+                   FontSize="38"
+                   FontAttributes="Italic"/>
+            <Image Source="https://avatars.githubusercontent.com/u/72640449?v=4" 
+                   IsEnabled="True"
+                   HeightRequest="220"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit"
+                   Margin="20"/>
+
+            <Label x:Name="txtNota" 
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="Center"
+                   FontFamily="Arial"
+                   FontAttributes="Bold"
+                   FontSize="22"                   
+                   Text="Olá, eu sou o Emmanuel, tenho 23 anos e sou natural de Cataguases-MG. Prazer em conhece-lo(a)! Atuo como desenvolvedor mobile, 
+                   utilizando C#.NET com Xamarin em uma empresa voltada para o setor eletrico."
+                    Margin="15"/>
+            
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center"
+                         Margin="20,0,20,20">
+                <Button x:Name="btnVoltar" 
+                    Text="Voltar"                    
+                    FontAttributes="Bold"
+                    Clicked="btnVoltar_Clicked"/>
+            </StackLayout>    
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -47,6 +47,12 @@ namespace AppLembrete.Views
             MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
             dP.Detail = new PagePrincipal();
         }
-       
+
+        private void btnExcluir_Clicked(object sender, EventArgs e)
+        {
+                                                                                 
+           //Implemnetar futuramente    
+            
+        }
     }
 }

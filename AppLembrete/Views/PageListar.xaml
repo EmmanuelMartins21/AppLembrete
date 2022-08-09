@@ -21,6 +21,7 @@
                          HorizontalOptions="Center"
                          Margin="20,0,20,20">                
                 <Button x:Name="Voltar" Text="Voltar" Clicked="Voltar_Clicked"/>
+                <Button x:Name="btnExcluir" Text="Excluir" FontAttributes="Bold" Clicked="btnExcluir_Clicked"/>
             </StackLayout>            
         </StackLayout>
     </ContentPage.Content>

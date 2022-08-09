@@ -15,6 +15,21 @@ namespace AppLembrete.Views
         public PageSobre()
         {
             InitializeComponent();
+            
+        }
+        Image img = new Image
+        {
+            Source = "Source/images/perfil.jpeg",
+            Aspect = Aspect.AspectFit,
+            VerticalOptions = LayoutOptions.Fill,
+            HorizontalOptions = LayoutOptions.CenterAndExpand,
+
+        };
+
+        private void btnVoltar_Clicked(object sender, EventArgs e)
+        {
+            MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
+            dP.Detail = new PagePrincipal();
         }
     }
 }
