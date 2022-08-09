@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLembrete.Views.PageCadastrar" Title="Cadastro e Alteração de Notas">
+    <ContentPage.Content >
+        <StackLayout Orientation="Vertical" >
+            <Entry x:Name="txtTitulo"  Placeholder="Titulo da nota" />
+            <StackLayout Orientation="Vertical" Padding="20">
+                <Label Text="Favorito" FontSize="Medium"/>
+                <Switch x:Name="swFavorito" HorizontalOptions="Start"/>
+            </StackLayout>            
+            <Editor x:Name="txtNota"  Placeholder="Dados da Nota"
+                    VerticalOptions="FillAndExpand"
+                    Margin="20"/>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center"
+                         Margin="20,0,20,20">
+                <Button x:Name="btnSalvar" Text="Cadastrar" FontAttributes="Bold" Clicked="btnSalvar_Clicked" />
+                <Button x:Name="btnCancelar" Text="Cancelar" FontAttributes="Bold" Clicked="btnCancelar_Clicked"/>
+            </StackLayout>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

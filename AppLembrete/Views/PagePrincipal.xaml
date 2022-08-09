@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLembrete.Views.PagePrincipal" IsPresented="True">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Button x:Name="btHome" Text="Home" Clicked="btHome_Clicked"/>
+                <Button x:Name="btCadastrar"  Text="Cadastrar" Clicked="btCadastrar_Clicked"/>
+                <Button x:Name="btListar"  Text="Listar" Clicked="btListar_Clicked"/>
+                <Button x:Name="btSobre"  Text="Sobre" Clicked="btSobre_Clicked"/>
+            </StackLayout>           
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Page principal">
+            <Label x:Name="TesteDB" Text="Seja bem-vindo!"/>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
