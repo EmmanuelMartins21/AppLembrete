@@ -5,12 +5,13 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Black" Margin="12">
+            <ListView x:Name="ListaNotas" HasUnevenRows="True" 
+                      SeparatorColor="Black" Margin="12"
+                      ItemSelected="ListaNotas_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout >
-                                <Label Text="{Binding Id,StringFormat='Codigo: {0}'}" />
                                 <Label Text="{Binding Titulo,StringFormat='Titulo: {0}'}"/>
                             </StackLayout>
                         </ViewCell>

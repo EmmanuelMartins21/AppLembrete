@@ -12,7 +12,7 @@ namespace AppLembrete
         {
             InitializeComponent();
 
-            MainPage = new PagePrincipal();
+            MainPage = new PageHome();
         }
         public App(string dbName,string dbPath)
         {

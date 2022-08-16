@@ -4,7 +4,8 @@
              x:Class="AppLembrete.Views.PageCadastrar" Title="Cadastro e Alteração de Notas">
     <ContentPage.Content >
         <StackLayout Orientation="Vertical" >
-            <Entry x:Name="txtTitulo"  Placeholder="Titulo da nota" />
+            <Entry x:Name="txtCodigo"  IsEnabled="False" IsVisible="False" />
+            <Entry x:Name="txtTitulo"  Placeholder="Titulo da nota" />            
             <StackLayout Orientation="Vertical" Padding="20">
                 <Label Text="Favorito" FontSize="Medium"/>
                 <Switch x:Name="swFavorito" HorizontalOptions="Start"/>
@@ -15,8 +16,12 @@
             <StackLayout Orientation="Horizontal" 
                          HorizontalOptions="Center"
                          Margin="20,0,20,20">
-                <Button x:Name="btnSalvar" Text="Cadastrar" FontAttributes="Bold" Clicked="btnSalvar_Clicked" />
-                <Button x:Name="btnCancelar" Text="Cancelar" FontAttributes="Bold" Clicked="btnCancelar_Clicked"/>
+                <Button x:Name="btnSalvar" Text="Cadastrar" FontAttributes="Bold" 
+                        Clicked="btnSalvar_Clicked" />
+                <Button x:Name="btnExcluir" Text="Excluir" FontAttributes="Bold" 
+                        Clicked="btnExcluir_Clicked" IsVisible="False"/>
+                <Button x:Name="btnCancelar" Text="Cancelar" FontAttributes="Bold" 
+                        Clicked="btnCancelar_Clicked"/>
             </StackLayout>            
         </StackLayout>
     </ContentPage.Content>

@@ -1,5 +1,11 @@
 # App Lembrete
 Este projeto(ainda em construção) apresenta um aplicativo de notas/lembretes para Android e IOS, utilizando banco de dados local.
+## telas desenvolvidas
+[!image](/telasAppLembrete/telaPrincipal.jpeg) 
+[!image](/telasAppLembrete/telaCadastro.jpeg) 
+[!image](/telasAppLembrete/telaListar.jpeg) 
+[!image](/telasAppLembrete/telaSobre.jpeg) 
+
 ## Tecnologias
 Para o desenvolvimento desse projeto, foi usando, C#.NET, o Xamarin para o desenvolvimento multiplataforma e o SQlite para 
 parte de banco de dados local. Para saber mais de cada tecnologia: </br>

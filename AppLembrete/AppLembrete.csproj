@@ -11,8 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Source\**" />
     <Compile Remove="src\**" />
+    <EmbeddedResource Remove="Source\**" />
     <EmbeddedResource Remove="src\**" />
+    <None Remove="Source\**" />
     <None Remove="src\**" />
   </ItemGroup>
 

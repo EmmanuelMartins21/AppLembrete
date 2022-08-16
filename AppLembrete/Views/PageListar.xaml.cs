@@ -17,35 +17,19 @@ namespace AppLembrete.Views
         public PageListar()
         {
             InitializeComponent();
-            AtualizaLista();           
+            AtualizaLista();
         }
-        public void InserirItens()
-        {
-            ModelNotas nota = new ModelNotas();
-            nota.Titulo = "Teste" + DateTime.Now.ToString();
-            nota.Nota = "Vamos tentar ";
-            nota.Favorito = false;
 
-            ServicesDbNotas dbNotas = new ServicesDbNotas(App.DbPath); // Necessario passar o caminho do banco
-            dbNotas.InserirNotas(nota);
-            DisplayAlert("", dbNotas.StatusMessage, "Ok");
-        }
         public void AtualizaLista()
         {
             ServicesDbNotas dbNotas = new ServicesDbNotas(App.DbPath); // Necessario passar o caminho do banco
             ListaNotas.ItemsSource = dbNotas.ListarNotas();
-        }
-
-
-       /* private void Button_Clicked(object sender, EventArgs e)
-        {            
-            AtualizaLista();
-        }*/
+        }      
 
         private void Voltar_Clicked(object sender, EventArgs e)
         {
             MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
-            dP.Detail = new PagePrincipal();
+            dP.Detail = new NavigationPage(new PagePrincipal());
         }
 
         private void btnExcluir_Clicked(object sender, EventArgs e)
@@ -53,6 +37,14 @@ namespace AppLembrete.Views
                                                                                  
            //Implemnetar futuramente    
             
+        }
+
+        private void ListaNotas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ModelNotas nota = (ModelNotas)ListaNotas.SelectedItem; // captura a seleção da lista
+            MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
+            dP.Detail = new NavigationPage(new PageCadastrar(nota));
+
         }
     }
 }

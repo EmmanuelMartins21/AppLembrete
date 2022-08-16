@@ -140,4 +140,37 @@
       <Name>AppLembrete</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notaIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deletar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\esqueci1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\esqueci2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\inserir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\localizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PerfilPessoal.png" />
+  </ItemGroup>
 </Project>

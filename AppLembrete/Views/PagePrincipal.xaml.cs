@@ -21,25 +21,25 @@ namespace AppLembrete.Views
        
         private void btHome_Clicked(object sender, EventArgs e)
         {
-            Detail = new PageHome();
+            Detail = new NavigationPage(new PageHome());
             IsPresented = false;
         }
 
         private void btCadastrar_Clicked(object sender, EventArgs e)
         {
-            Detail = new PageCadastrar();
+            Detail = new NavigationPage(new PageCadastrar());
             IsPresented = false;
         }
 
         private void btListar_Clicked(object sender, EventArgs e)
         {
-            Detail = new PageListar();
+            Detail = new NavigationPage(new PageListar());
             IsPresented = false;
         }
 
         private void btSobre_Clicked(object sender, EventArgs e)
         {
-            Detail = new PageSobre();
+            Detail = new NavigationPage(new PageSobre());
             IsPresented = false;
         }
     }

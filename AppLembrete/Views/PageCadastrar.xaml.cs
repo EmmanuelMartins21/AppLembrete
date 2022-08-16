@@ -19,6 +19,18 @@ namespace AppLembrete.Views
             InitializeComponent();
         }
 
+        public PageCadastrar(ModelNotas nota)
+        {
+            InitializeComponent();
+            btnSalvar.Text = "Alterar";
+            txtCodigo.IsVisible = true;
+            btnExcluir.IsVisible = true;
+            txtCodigo.Text = nota.Id.ToString();
+            txtTitulo.Text = nota.Titulo;
+            txtNota.Text = nota.Nota;
+            swFavorito.IsToggled = nota.Favorito;
+        }
+
         private void btnSalvar_Clicked(object sender, EventArgs e)
         {
             try
@@ -37,10 +49,12 @@ namespace AppLembrete.Views
                 else
                 {
                     // alterar uma nota
-
+                    notas.Id = Convert.ToInt32(txtCodigo.Text);
+                    dbNotas.Atualizar(notas);
+                    DisplayAlert($"Operação executada", dbNotas.StatusMessage, "Ok");
                 }
                 MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
-                dP.Detail = new PagePrincipal();
+                dP.Detail = new NavigationPage(new PagePrincipal());
             }
             catch(Exception ex)
             {
@@ -52,7 +66,22 @@ namespace AppLembrete.Views
         private void btnCancelar_Clicked(object sender, EventArgs e)
         {
             MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
-            dP.Detail = new PagePrincipal();
+            dP.Detail = new NavigationPage(new PagePrincipal());
+        }
+
+
+        private async void btnExcluir_Clicked(object sender, EventArgs e)
+        {
+            var resp = await DisplayAlert($"Atenção","Deseja realmente excluir este registro?","Sim", "Cancelar");
+
+            if(resp == true)
+            {
+                ServicesDbNotas dbNotas = new ServicesDbNotas(App.DbPath);
+                int id = Convert.ToInt32((txtCodigo.Text));
+                dbNotas.RemoverNota(id);
+                MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
+                dP.Detail = new NavigationPage(new PagePrincipal());
+            }
         }
     }
 }
