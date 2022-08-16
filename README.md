@@ -1,7 +1,7 @@
 # App Lembrete
-Este projeto(ainda em construção) apresenta um aplicativo de notas/lembretes para Android e IOS, utilizando banco de dados local.
-## telas desenvolvidas
+Este projeto(ainda em construção) apresenta um aplicativo de notas/lembretes para Android e IOS, utilizando banco de dados SQLite. A mesma foi desenvolvido baseada na aplicação desenvolvida no [curso](https://www.youtube.com/playlist?list=PLfvOpw8k80Wr1V3SKx_uX3fK316jvvDdT) do professor Danilo Filitto.
 
+## telas desenvolvidas
 ![image](https://user-images.githubusercontent.com/72640449/184782659-6164c45f-e94a-4247-8380-7f710697d60c.png)
 ![image](https://user-images.githubusercontent.com/72640449/184782775-2ce47014-b6c6-4ae6-afb3-cf90d7dd3844.png)
 ![image](https://user-images.githubusercontent.com/72640449/184782819-daa6e4bf-b67a-4ed8-a02f-922a33d80a12.png)
