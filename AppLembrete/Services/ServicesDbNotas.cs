@@ -99,14 +99,31 @@ namespace AppLembrete.Services
                 throw new Exception( String.Format("0 registro(s) atualizado(s) {0}",e.Message));
             }
         }
-        public List<ModelNotas> Localizar(string titulo) 
+        public List<ModelNotas>Localizar(string titulo) 
+        {
+            List<ModelNotas> lista = new List<ModelNotas>();
+            try
+            {               
+                // variavel recebe todo registro contido na tabela, quando o tituo dela for igual a da passada por parametro
+                var resp = from reg in conn.Table<ModelNotas>()
+                           where reg.Titulo.ToLower().Contains(titulo.ToLower())
+                           select reg;
+                lista = resp.ToList();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(String.Format("Erro: {0}", e.Message));
+            }
+            return lista;
+        }
+        public List<ModelNotas> Localizar(string titulo, bool favorita)
         {
             List<ModelNotas> lista = new List<ModelNotas>();
             try
             {
                 // variavel recebe todo registro contido na tabela, quando o tituo dela for igual a da passada por parametro
                 var resp = from reg in conn.Table<ModelNotas>()
-                           where reg.Titulo.ToLower().Contains(titulo.ToLower())
+                           where reg.Titulo.ToLower().Contains(titulo.ToLower()) && reg.Favorito == true                           
                            select reg;
                 lista = resp.ToList();
             }
@@ -129,5 +146,7 @@ namespace AppLembrete.Services
             }
             return notas;
         }
+     
+
     }
 }

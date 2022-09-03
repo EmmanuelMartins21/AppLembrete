@@ -3,9 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"              
              x:Class="AppLembrete.Views.PageHome" Title="Home">
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="esqueci1.png"/>
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="Auto" />                
+            </Grid.RowDefinitions>
+            <ListView x:Name="ListaNotas" HasUnevenRows="True" 
+                      SeparatorColor="Black" Margin="20">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout >
+                                <Label Text="{Binding Titulo,StringFormat='Titulo: {0}'}" Grid.Row="0" Grid.Column="0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Image Source="Principal.png" 
+                   Grid.Row="0" Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+           
+
+            <Image Source="inserir.png" Grid.Row="1" Grid.Column="0"
+                   VerticalOptions="End">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped"
+                                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers> 
+            </Image>
+            <Image Source="localizar.png" Grid.Row="1" Grid.Column="1"
+                    VerticalOptions="End">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped_1"
+                                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
             
-        </StackLayout>       
+            <Label Text="Cadastrar" Grid.Row="2" 
+                   Grid.Column="0" FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <Label Text="Localizar" Grid.Row="2" 
+                   Grid.Column="1" FontSize="Large"
+                   HorizontalOptions="Center"/>
+            
+        </Grid>
+       <!-- <StackLayout>
+            <Image Source="esqueci1.png"/>
+            <Image Source="esqueci1.png" Grid.Row="1" Grid.Column="0"/>
+        </StackLayout>       -->
     </ContentPage.Content>
 </ContentPage>

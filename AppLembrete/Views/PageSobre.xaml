@@ -4,7 +4,21 @@
              x:Class="AppLembrete.Views.PageSobre" Title="Pagina Sobre o Desenvolvedor">
     <ContentPage.Content>
         <StackLayout Margin="0,35,10,0" >
-            <Image Source="PerfilPessoal.png"/>
+            <Frame Margin="10"
+                   BorderColor="Black"
+                   CornerRadius="90"
+                   HeightRequest="90"
+                   WidthRequest="90"
+                   IsClippedToBounds="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Image Source="PerfilPessoal.png"
+                     Aspect="AspectFill"
+                     Margin="-20"
+                     HeightRequest="100"
+                     WidthRequest="100" />
+            </Frame>
+            
             <StackLayout >
                 <Label Text="Sobre mim"
                    HorizontalOptions="Center"
@@ -31,8 +45,7 @@
                     FontAttributes="Bold"
                     Clicked="btnVoltar_Clicked"
                         />
-            </StackLayout>    
-
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

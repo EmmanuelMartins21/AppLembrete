@@ -173,4 +173,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\PerfilPessoal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\principal.png" />
+  </ItemGroup>
 </Project>

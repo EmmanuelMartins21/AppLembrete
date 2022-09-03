@@ -4,15 +4,26 @@
              x:Class="AppLembrete.Views.PageListar" Title="Listar Notas"
              >
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout>            
+            <StackLayout Orientation="Horizontal">
+                <Label FontSize = "22" Text="Exibir apenas os Favoritos:"/>
+                <Switch x:Name="swFav" HorizontalOptions="Start"
+                   Toggled="swFav_Toggled" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtNota" Keyboard="Plain" Placeholder="Titulo da nota"
+                       HorizontalOptions="FillAndExpand"></Entry>
+                <Button x:Name="btnLocalizar"  FontSize = "16" Text="Localizar" Clicked="btnLocalizar_Clicked"/>
+            </StackLayout>
+
             <ListView x:Name="ListaNotas" HasUnevenRows="True" 
-                      SeparatorColor="Black" Margin="12"
+                      SeparatorColor="Black" Margin="20"
                       ItemSelected="ListaNotas_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout >
-                                <Label Text="{Binding Titulo,StringFormat='Titulo: {0}'}"/>
+                                <Label  FontSize = "22" Text="{Binding Titulo,StringFormat='Titulo: {0}'}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -22,9 +22,20 @@ namespace AppLembrete.Views
 
         public void AtualizaLista()
         {
+            string titulo = "";
+            if (!string.IsNullOrEmpty(txtNota.Text)) titulo = txtNota.Text;
+            
             ServicesDbNotas dbNotas = new ServicesDbNotas(App.DbPath); // Necessario passar o caminho do banco
-            ListaNotas.ItemsSource = dbNotas.ListarNotas();
-        }      
+           // Se o switch estiver habilitado irá exibir apenas as notas favoritas
+            if (swFav.IsToggled)
+            {
+                ListaNotas.ItemsSource = dbNotas.Localizar(titulo,true);                
+            }
+            else
+            {
+                ListaNotas.ItemsSource = dbNotas.Localizar(titulo);
+            }
+        } 
 
         private void Voltar_Clicked(object sender, EventArgs e)
         {
@@ -45,6 +56,16 @@ namespace AppLembrete.Views
             MasterDetailPage dP = (MasterDetailPage)Application.Current.MainPage;
             dP.Detail = new NavigationPage(new PageCadastrar(nota));
 
+        }
+
+        private void swFav_Toggled(object sender, ToggledEventArgs e)
+        {
+            AtualizaLista();
+        }
+
+        private void btnLocalizar_Clicked(object sender, EventArgs e)
+        {
+            AtualizaLista();
         }
     }
 }
